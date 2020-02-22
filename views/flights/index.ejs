@@ -14,17 +14,14 @@
                 <th>Airline</th>
                 <th>Flight Number</th>
                 <th>Departure Date and Time</th>
-                <th>Cast</th>
             </tr>
         </thead>
         <tbody>
-            <% movies.forEach( (movie) => { %>
+            <% flights.forEach(function(flight){ %>
                 <tr>
-                    <td><%= movie.title %></td>
-                    <td><%= movie.releaseYear %></td>
-                    <td><%= movie.mpaaRating %></td>
-                    <td><%= movie.cast.join(', ') %></td>
-                    <td><%= movie.nowShowing ? 'Yes' : 'No' %></td>
+                    <td><%= flight.airline %></td>
+                    <td><%= flight.flightNo %></td>
+                    <td><%= flight.depart %></td>
                 </tr>
             <% }); %>
         </tbody>
