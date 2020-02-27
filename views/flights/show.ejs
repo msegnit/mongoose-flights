@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<body>
+    <%- include('../partials/nav')%>
+    <section id="show-page">
+        <div>Airline: </div>
+        <div><%= flight.airline %></div>
+        <div>Flight Number: </div>
+        <div><%= flight.flightNo %></div>
+        <div>Departs: </div>
+        <div><%= flight.departs %></div>
+        <div>Airport: </div>
+        <div><%= flight.airport %></div>
+        <div>Destination: </div>
+        <form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destination">
+            <label>Departure:</label>
+            <select name="airport">
+              <option value="AUS">AUS</option>
+              <option value="DFW">DFW</option>
+              <option value="DEN">DEN</option>
+              <option value="LAX">LAX</option>
+              <option value="SAN">SAN</option>
+            </select>
+            <input type="submit" value="Add Destination">
+          </form>
+      </section>
+</body>
+</html>
